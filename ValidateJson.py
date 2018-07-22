@@ -59,33 +59,34 @@ def main():
      result = is_json(sys.argv[1])
 
      if (result):
-        try:
-             parser = ConfigParser()
-             parser.read('./Coin.cfg')
-        except parser.ParsingError as err:
-             print('Could not parse:', err)
+        #try:
+             #parser = ConfigParser()
+             #parser.read('./Coin.cfg')
+        #except parser.ParsingError as err:
+             #print('Could not parse:', err)
 
-        for section_name in parser.sections():
-             print('Section:', section_name)
-             print('  Options:', parser.options(section_name))
-             for name, value in parser.items(section_name):
-                 print('  {} = {}'.format(name, value))
-             print()
+        #for section_name in parser.sections():
+             #print('Section:', section_name)
+             #print('  Options:', parser.options(section_name))
+             #for name, value in parser.items(section_name):
+                 #print('  {} = {}'.format(name, value))
+             #print()
 
-        for k, v in result.items():
-             print (v)
-          #if 'address' in result:
-             #validate_eth_address(result['address'])
-          #else:
-             #print ("No Address found")
-          #if 'description' in result:
-             #validate_definition(result['description'])
-          #else:
-             #print ("\t No Description found")
-          #if 'links' in result:
-             #validate_links(result['links'])
-          #else:
-             #print("No links found")
+        #for k, v in result.items():
+             #print (v)
+
+        if 'address' in result:
+             validate_eth_address(result['address'])
+        else:
+             print ("No Address found")
+        if 'description' in result:
+             validate_definition(result['description'])
+        else:
+             print ("\t No Description found")
+        if 'links' in result:
+             validate_links(result['links'])
+        else:
+             print("No links found")
      else:
           print("##############################")
           print("# Json check FAILED")

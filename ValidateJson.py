@@ -91,7 +91,7 @@ def main():
           print("# Json check FAILED")
           print("##############################")   
   else:
-      print("Usage: validateJson.py filename.json")
+      print("Usage: ValidateJson.py filename.json")
 
 if __name__ == '__main__':
     main()
